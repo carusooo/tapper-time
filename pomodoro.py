@@ -7,8 +7,8 @@ import sys
 import threading
 import time
 
-from TP_lib import gt1151
-from TP_lib import epd2in13_V2
+from lib.TP_lib import gt1151
+from lib.TP_lib import epd2in13_V2
 import app
 
 fontdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'font')

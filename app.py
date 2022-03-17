@@ -2,8 +2,8 @@ import logging
 import threading
 import time
 
-from screens import core, task_list, task_timer, timer_done
-from service import todoist
+from lib.screens import core, task_list, task_timer, timer_done
+from lib.service import todoist
 
 logging.basicConfig(level=logging.DEBUG)
 
