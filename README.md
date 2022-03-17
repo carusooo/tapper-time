@@ -1,4 +1,6 @@
-Touchscren Pomodoro for use with Raspberry Pi and eInk display
+# Tapper Time
+
+Tapper time is a touchscren Pomodoro for use with Raspberry Pi and eInk display
 
 This code makes a touchscreen eInk to-do list and pomodoro timer for your desk.
 
