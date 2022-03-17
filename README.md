@@ -4,6 +4,10 @@ Tapper time is a touchscren Pomodoro for use with Raspberry Pi and eInk display
 
 This code makes a touchscreen eInk to-do list and pomodoro timer for your desk.
 
+<img src="https://user-images.githubusercontent.com/33580338/158860069-fe996b13-2fff-48f5-9eaa-e757386be1f4.png" width="400">
+<img src="https://user-images.githubusercontent.com/33580338/158860118-8ff35251-7bee-4518-8ef2-91c402b4fb0d.png" width="400">
+
+
 ## Usage 
 
 1. Enter your to-do list in a list making app (like [Todoist](todoist.com))
