@@ -2,7 +2,7 @@ import logging
 
 from PIL import Image,ImageDraw
 
-from service.core import Task, TaskService
+from ..service.core import Task, TaskService
 from . import core
 
 class TimerDoneScreen(core.Screen):

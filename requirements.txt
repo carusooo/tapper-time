@@ -1,0 +1,11 @@
+attrs==21.4.0
+certifi==2021.10.8
+charset-normalizer==2.0.12
+idna==3.3
+Pillow==9.0.1
+requests==2.27.1
+RPi.GPIO==0.7.1
+smbus==1.1.post2
+spidev==3.5
+todoist-api-python==1.1.1
+urllib3==1.26.9

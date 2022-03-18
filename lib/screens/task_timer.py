@@ -3,7 +3,7 @@ import time
 
 from PIL import Image,ImageDraw
 
-from service.core import Task, TaskService
+from ..service.core import Task, TaskService
 from . import core
 
 class TaskTimerScreen(core.Screen):
