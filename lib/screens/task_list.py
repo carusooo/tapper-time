@@ -1,12 +1,12 @@
 import logging
-
+from typing import List
 from PIL import Image,ImageDraw
 
 from ..service.core import Task, TaskService
 from . import core
 
 class TaskListScreen(core.Screen):
-    tasks: list[Task]
+    tasks: List[Task]
     project_id: int
     task_position = 0
     task_service: TaskService

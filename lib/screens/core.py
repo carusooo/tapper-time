@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-
+from typing import Tuple
 from dataclasses import dataclass
 from typing import Callable
 from PIL import ImageFont
@@ -58,7 +58,7 @@ Y4 = SCREEN_HEIGHT // 4
 X3 = SCREEN_WIDTH // 3
 X2 = SCREEN_WIDTH // 2
 
-def center(e: Element) -> tuple[float, float]:
+def center(e: Element) -> Tuple[float, float]:
     return ((e.x_start+e.x_end)/2, (e.y_start+e.y_end)/2)
 
 def within(p: Point, e: Element) -> bool:
