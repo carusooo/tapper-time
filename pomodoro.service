@@ -1,0 +1,12 @@
+[Unit]
+Description=Pomodoro Service
+After=multi-user.target
+
+[Service]
+Type=idle
+User=pi
+ExecStart=/usr/bin/bash /home/pi/pomodoro/pomodoro.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
