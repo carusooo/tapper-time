@@ -8,6 +8,7 @@ from lib.service import todoist
 logging.basicConfig(level=logging.DEBUG)
 
 class Application(core.App):
+    """ The core application """
     service: todoist.Todoist
     current_screen: core.Screen = None
     __thread: threading.Thread
@@ -17,6 +18,7 @@ class Application(core.App):
     def __init__(self, api, project_id, pomodoro_duration):
         self.service = todoist.Todoist(api_key=api, project_id=project_id)
         self.pomodoro_duration_s = pomodoro_duration * 60
+        self.tasks_changed = False
         self.__redraw = False
         self.__task_list = task_list.TaskListScreen(self, self.service)
         self.__task_timer = task_timer.TaskTimerScreen(self, self.service)
@@ -26,7 +28,6 @@ class Application(core.App):
 
 
     def start(self):
-        self.tasks_changed = False
         self.current_screen = self.task_list
         return self.current_screen.draw()
 
@@ -45,6 +46,7 @@ class Application(core.App):
             self.__thread.cancel()
         if self.tasks_changed:
             self.__task_list.refresh()
+            self.tasks_changed = False
         return self.__task_list
 
     @property

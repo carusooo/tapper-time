@@ -69,6 +69,7 @@ class TaskTimerScreen(core.Screen):
 
     def done(self) -> core.Screen:
         self.service.task_completed(self.task)
+        self.app.tasks_changed = True
         return self.app.task_list
 
     def cancel(self) -> core.Screen:
