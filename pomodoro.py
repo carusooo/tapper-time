@@ -42,9 +42,9 @@ def update_display(display, image, count):
 try:
     logging.info("Starting tasks fetch")
 
-    api_data = None
-    with open('api_config.json') as f:
-        api_data = json.load(f)
+    config = None
+    with open('config.json') as f:
+        config = json.load(f)
 
     epd = epd2in13_V2.EPD_2IN13_V2()
     gt = gt1151.GT1151()
@@ -60,7 +60,7 @@ try:
     t.setDaemon(True)
     t.start()
 
-    app = app.Application(api_data['api_key'], api_data['project_id'])
+    app = app.Application(config['api_key'], config['project_id'], config['duration'])
     screen = app.start()
 
     epd.displayPartBaseImage(epd.getbuffer(screen))

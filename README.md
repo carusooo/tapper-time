@@ -42,7 +42,7 @@ sudo apt-get update && sudo apt-get install python3-pip
 ### Install TapperTime on your Raspberry Pi
 
 1. Pull the code to your host machine
-1. Make a copy of `example_api_config.json` and rename it to `api_config.json`
+1. Make a copy of `example_config.json` and rename it to `config.json`
 1. Add your API token and todoist project ID
 1. Copy the files to your Raspberry Pi
 ```bash
@@ -82,4 +82,20 @@ NOTE: This assumes that your Raspberry Pi is on your network as `pomodoro.local`
 
 ```bash
 rsync -a --exclude-from=.rsync-exclude.txt . pi@pomodoro.local:~/pomodoro
+```
+
+#### Unit testing 
+
+Set up the unit test virtual environment
+
+```bash
+python3 -m venv new env-test
+source env-test/bin/activate
+pip3 install -r test/requirements.txt
+```
+
+Then run the tests 
+
+```bash 
+pytest
 ```

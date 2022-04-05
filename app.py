@@ -7,16 +7,16 @@ from lib.service import todoist
 
 logging.basicConfig(level=logging.DEBUG)
 
-POMODORO_DURATION_S = 28*60
-
 class Application(core.App):
     service: todoist.Todoist
     current_screen: core.Screen = None
     __thread: threading.Thread
     tasks_changed: bool
+    pomodoro_duration_s: int
 
-    def __init__(self, api, project_id):
+    def __init__(self, api, project_id, pomodoro_duration):
         self.service = todoist.Todoist(api_key=api, project_id=project_id)
+        self.pomodoro_duration_s = pomodoro_duration * 60
         self.__redraw = False
         self.__task_list = task_list.TaskListScreen(self, self.service)
         self.__task_timer = task_timer.TaskTimerScreen(self, self.service)
@@ -49,7 +49,7 @@ class Application(core.App):
 
     @property
     def task_timer(self) -> core.Screen:
-        self.__timer_end_time = time.time() + POMODORO_DURATION_S
+        self.__timer_end_time = time.time() + self.pomodoro_duration_s
         self.__task_timer.end_time = self.__timer_end_time
         self.update_timer()
         return self.__task_timer
